@@ -1,30 +1,31 @@
-%define product		LinguaPlone
-%define ver		0.8.5
-%define rel		2
+%define Product LinguaPlone
+%define product linguaplone
+%define name    zope-%{Product}
+%define version 1.0
+%define bad_version %(echo %{version} | sed -e 's/\\./-/g')
+%define release %mkrel 1
 
 %define zope_minver	2.7
-
 %define zope_home	%{_prefix}/lib/zope
 %define software_home	%{zope_home}/lib/python
 
-
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
 Summary:	LinguaPlone aims to be *the* multilingual/translation solution for Plone
-Name:		zope-%{product}
-Version:	%{ver}
-Release:	%mkrel %{rel}
 License:	GPL
 Group:		System/Servers
-Source:		http://plone.org/products/linguaplone/releases/%{version}/LinguaPlone-%{version}.tar.bz2
-URL:		http://plone.org/products/linguaplone
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
-BuildArch:	noarch
+URL:        http://plone.org/products/%{product}
+Source:     http://plone.org/products/%{product}/releases/%{version}/%{product}-%{bad_version}.tar.gz
 Requires:	zope >= %{zope_minver}
 Requires:	plone >= 2.1
 Requires:	zope-Archetypes
 Requires:	zope-PloneLanguageTool
+BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
- LinguaPlone aims to be *the* multilingual/translation solution for
+LinguaPlone aims to be *the* multilingual/translation solution for
 Plone, and achieves this by being as transparent as possible and by
 minimizing the impact for existing applications and Plone itself.
 
@@ -96,8 +97,5 @@ if [ -f "%{_prefix}/bin/zopectl" ] && [ "`%{_prefix}/bin/zopectl status`" != "da
 fi
 
 %files
-%defattr(-, root, root, 0755)
+%defattr(-,root,root)
 %{software_home}/Products/*
-
-
-
