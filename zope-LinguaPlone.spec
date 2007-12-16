@@ -1,9 +1,9 @@
 %define Product LinguaPlone
 %define product linguaplone
 %define name    zope-%{Product}
-%define version 1.0
+%define version 2.0
 %define bad_version %(echo %{version} | sed -e 's/\\./-/g')
-%define release %mkrel 2
+%define release %mkrel 1
 
 %define zope_minver	2.7
 %define zope_home	%{_prefix}/lib/zope
@@ -16,7 +16,7 @@ Summary:	LinguaPlone aims to be *the* multilingual/translation solution for Plon
 License:	GPL
 Group:		System/Servers
 URL:        http://plone.org/products/%{product}
-Source:     http://plone.org/products/%{product}/releases/%{version}/%{product}-%{bad_version}.tar.gz
+Source:     http://plone.org/products/%{product}/releases/%{version}/%{Product}-%{version}.tar.gz
 Requires:	zope >= %{zope_minver}
 Requires:	zope-Plone >= 2.1
 Requires:	zope-Archetypes
