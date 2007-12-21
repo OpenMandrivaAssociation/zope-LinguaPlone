@@ -22,6 +22,7 @@ Requires:	zope-Plone >= 2.1
 Requires:	zope-Archetypes
 Requires:	zope-PloneLanguageTool
 BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 LinguaPlone aims to be *the* multilingual/translation solution for
