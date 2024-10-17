@@ -15,7 +15,7 @@ Release:	%{release}
 Summary:	LinguaPlone aims to be *the* multilingual/translation solution for Plone
 License:	GPL
 Group:		System/Servers
-URL:        http://plone.org/products/%{product}
+URL:        https://plone.org/products/%{product}
 Source:     http://plone.org/products/%{product}/releases/%{version}/%{Product}-%{version}.tar.gz
 Requires:	zope >= %{zope_minver}
 Requires:	zope-Plone >= 2.1
